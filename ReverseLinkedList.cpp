@@ -3,26 +3,36 @@
 
 using namespace std;
 
-struct Node {
-    int value;
-    Node** next;
+
+struct ListNode{
+    int val;
+    ListNode* next;
+
+    ListNode(){
+        this->val = 0;
+        this->next = nullptr;
+    }
+    ListNode(int x){
+        this->val = x;
+        this->next = nullptr;
+    }
+
+    ListNode(int x, ListNode* next){
+        this->val = x;
+        this->next = next;
+    }
 };
 
+ListNode* reverseList(ListNode* head){
+    ListNode* result;
+    return result;
+}
 
 int main(){
-    Node* head = new Node();
-    Node* first = new Node();
-    Node* second = new Node();
-
-    head->next = &first;
-
-    first->value = 1;
-    first->next = nullptr;
-
-    
-    // cout << first << "  Head Ko Next:   " << **head->next.value << endl;
-    cout << first << "  Head Ko Next:   " << (*(*head->next)).value << endl;
-    delete head;
-    delete first;
-    delete second;
+    ListNode* head = new ListNode();
+    ListNode* first = new ListNode();
+    ListNode* second = new ListNode();
+    ListNode* third = new ListNode();
+    ListNode* fourth = new ListNode();
+    return 0;
 }
