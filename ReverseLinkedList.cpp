@@ -24,15 +24,30 @@ struct ListNode{
 };
 
 ListNode* reverseList(ListNode* head){
-    ListNode* result;
-    return result;
+    //|0->  |   1->  |   2->  |  3 -> null |
+    //(Head)                        (Current)
+    ListNode* curr = head;
+    ListNode* prev = nullptr;
+
+    while(curr){
+        ListNode* temp = curr->next; //Storing 1;
+        curr->next = prev;
+        prev = curr;
+        curr = temp;
+    }
+    return prev;
+
 }
 
 int main(){
-    ListNode* head = new ListNode();
-    ListNode* first = new ListNode();
-    ListNode* second = new ListNode();
-    ListNode* third = new ListNode();
-    ListNode* fourth = new ListNode();
+    ListNode* fourth = new ListNode(3);
+    ListNode* third = new ListNode(2, fourth);
+    ListNode* second = new ListNode(1, third);
+    ListNode* first = new ListNode(0, second);
+    ListNode* head = first;
+
+    //|0->  |   1->  |   2->  |  3 -> null |
+    //(Head)
+    reverseList(head);
     return 0;
 }
